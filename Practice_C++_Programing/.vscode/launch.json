@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/kendrick/Documents/GitHub/Practice_coding/Practice_C_Programing",
+      "program": "/Users/kendrick/Documents/GitHub/Practice_coding/Practice_C_Programing/build/Debug/outDebug"
+    }
+  ]
+}
