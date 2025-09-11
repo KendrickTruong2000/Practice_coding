@@ -99,6 +99,8 @@
     "typeinfo": "cpp",
     "unordered_map": "cpp",
     "variant": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "sstream": "cpp",
+    "algorithm": "cpp"
   }
 }
