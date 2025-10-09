@@ -1,89 +1,64 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int *mergArray(int[], int[], int, int);
-double findMedian(int *, int);
+vector<int> mergArray(vector<int> &, vector<int> &, int, int);
+double findMedian(vector<int> &, vector<int> &);
 
 int main(int argc, char const *argv[])
 {
-    int m, n;
-    int *arrPtr;
-    double median;
+    double median = 0;
+    vector<int> num1 = {1, 2};
+    vector<int> num2 = {3, 4};
 
-    cout << "Please enter size for two array: ";
-    cin >> m;
-    cin >> n;
-
-    int arr1[m];
-    int arr2[n];
-
-    cout << "Please enter element for array 1: \n";
-
-    for (int i = 0; i < m; i++)
-    {
-        cout << "Element " << i << ": ";
-        cin >> arr1[i];
-    }
-
-    cout << "Please enter element for array 2: \n";
-
-    for (int j = 0; j < n; j++)
-    {
-        cout << "Element " << j << ": ";
-        cin >> arr2[j];
-    }
-
-    arrPtr = mergArray(arr1, arr2, m, n);
-
-    for (int i = 0; i < m + n; i++)
-    {
-        cout << arrPtr[i] << " ";
-    }
-    cout << "\n";
-
-    median = findMedian(arrPtr, m + n);
+    median = findMedian(num1, num2);
 
     cout << "Median is: " << median << "\n";
 
     return 0;
 }
 
-int *mergArray(int arr1[], int arr2[], int m, int n)
+vector<int> mergArray(vector<int> &num1, vector<int> &num2, int m, int n)
 {
-    int *mergeArr = new int[m + n];
+    vector<int> mergeArr;
     int i = 0, j = 0, k = 0;
 
     // Merge the two arrays
     while (i < m && j < n)
     {
-        if (arr1[i] < arr2[j])
-            mergeArr[k++] = arr1[i++];
+        if (num1[i] < num2[j])
+            mergeArr.push_back(num1[i++]);
         else
-            mergeArr[k++] = arr2[j++];
+            mergeArr.push_back(num2[j++]);
     }
 
-    // Copy remaining elements of arr1
+    // Copy remaining elements of num1
     while (i < m)
-        mergeArr[k++] = arr1[i++];
+        mergeArr.push_back(num1[i++]);
 
-    // Copy remaining elements of arr2
+    // Copy remaining elements of num2
     while (j < n)
-        mergeArr[k++] = arr2[j++];
+        mergeArr.push_back(num2[j++]);
 
     return mergeArr;
 }
 
-double findMedian(int *ptr, int size)
+double findMedian(vector<int> &num1, vector<int> &num2)
 {
+    int size, size1, size2;
     double median = 0;
+    size1 = num1.size();
+    size2 = num2.size();
+    vector<int> mergedSortedArray = mergArray(num1, num2, size1, size2);
+    size = mergedSortedArray.size();
     if (size % 2 == 0)
     {
-        median = (ptr[size / 2] + ptr[size / 2 - 1]) / 2;
+        median = (mergedSortedArray[size / 2] + mergedSortedArray[size / 2 - 1]) / 2.0;
     }
     else
     {
-        median = ptr[size / 2];
+        median = mergedSortedArray[size / 2];
     }
 
     return median;

@@ -101,6 +101,8 @@
     "variant": "cpp",
     "vector": "cpp",
     "sstream": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "cstddef": "cpp",
+    "tuple": "cpp"
   }
 }

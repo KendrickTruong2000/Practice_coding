@@ -18,7 +18,8 @@ int main(int argc, char const *argv[])
 
 int reverseInt(int num)
 {
-    int tempNum = 0, result = 0;
+    int tempNum = 0;
+    long long result = 0;
 
     while (num != 0)
     {
@@ -26,5 +27,11 @@ int reverseInt(int num)
         result = result * 10 + tempNum;
         num = num / 10;
     }
-    return result;
+
+    if (result > INT32_MAX || result < INT32_MIN)
+    {
+        return 0;
+    }
+
+    return (int)result;
 }
