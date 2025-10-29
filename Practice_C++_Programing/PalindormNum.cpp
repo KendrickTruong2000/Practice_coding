@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 bool isPalindormNumber(int num)
 {
     bool isPalindorm = false;
-    int tempNum = 0, unit = 0, originNum = 0;
+    long long tempNum = 0, unit = 0, originNum = 0;
 
     originNum = num;
 
