@@ -54,14 +54,10 @@ bool checkPalindrom(string str)
 {
     for (int i = 0; i < str.length() / 2; i++)
     {
-        for (int i = 0; i < str.length() / 2; i++)
+        if (str[i] != str[str.length() - 1 - i])
         {
-            if (str[i] != str[str.length() - 1 - i])
-            {
-                return false;
-            }
+            return false;
         }
-        return true;
     }
     return true;
 }
