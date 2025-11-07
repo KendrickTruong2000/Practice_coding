@@ -1,1 +1,2 @@
-cout << "here" << "\n";
+cout << haystack[count];
+                // cout << index;
