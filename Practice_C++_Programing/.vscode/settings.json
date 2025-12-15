@@ -103,6 +103,8 @@
     "sstream": "cpp",
     "algorithm": "cpp",
     "cstddef": "cpp",
-    "tuple": "cpp"
-  }
+    "tuple": "cpp",
+    "list": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
