@@ -25,13 +25,13 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-vector<vector<int>> threeSum(vector<int>& nums)
+vector<vector<int>> threeSum(vector<int> &nums)
 {
     vector<vector<int>> result;
     sort(nums.begin(), nums.end());
     int n = nums.size();
 
-    for (int i = 0; i < n -2; i++)
+    for (int i = 0; i < n - 2; i++)
     {
         if (i > 0 && nums[i] == nums[i - 1])
         {
@@ -39,7 +39,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
         }
 
         int left = i + 1, right = n - 1;
-        while(left < right)
+        while (left < right)
         {
             int sum = nums[i] + nums[left] + nums[right];
             if (sum == 0)
@@ -55,7 +55,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
                 {
                     --right;
                 }
-                
+
                 ++left;
                 --right;
             }
@@ -63,12 +63,13 @@ vector<vector<int>> threeSum(vector<int>& nums)
             {
                 ++left;
             }
-            else{
+            else
+            {
                 --right;
             }
-        } 
+        }
     }
-    
+
     return result;
 }
 

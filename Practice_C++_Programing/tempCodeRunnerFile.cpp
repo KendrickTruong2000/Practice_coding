@@ -1,1 +1,5 @@
--1, 0, 1, 2, -1, -4
+cout << current->val << endl;
+        // if (reverse->val != current->val)
+        // {
+        //     return false;
+        // }

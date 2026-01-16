@@ -20,8 +20,8 @@ vector<int> inorderTraversal(TreeNode *root);
 
 int main(int argc, char const *argv[])
 {
-    TreeNode *node3 = new TreeNode(3, nullptr, nullptr);
-    TreeNode *node2 = new TreeNode(2, node3, nullptr);
+    TreeNode *node3 = new TreeNode(2, nullptr, nullptr);
+    TreeNode *node2 = new TreeNode(3, node3, nullptr);
     TreeNode *node1 = new TreeNode(1, nullptr, node2);
     vector<int> result = inorderTraversal(node1);
 
