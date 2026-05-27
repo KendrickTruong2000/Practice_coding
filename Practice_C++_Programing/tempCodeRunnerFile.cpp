@@ -1,1 +1,1 @@
-(right + i) - (left + i)
+receiveACK
